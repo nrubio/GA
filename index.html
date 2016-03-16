@@ -85,10 +85,10 @@ function handleProperties(response) {
   if (response.result.items && response.result.items.length) {
 
     // Get the first Google Analytics account
-    var firstAccountId = "UA-46090517-2";//response.result.items[0].accountId;
+    var firstAccountId = "46090517";//response.result.items[0].accountId;
 
     // Get the first property ID
-    var firstPropertyId = "97521643";//response.result.items[0].id;
+    var firstPropertyId = "UA-46090517-2";//response.result.items[0].id;
 
     // Query for Views (Profiles).
     queryProfiles(firstAccountId, firstPropertyId);
