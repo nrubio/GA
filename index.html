@@ -53,6 +53,26 @@ function queryAccounts() {
   });
 }
 
+function queryCustomDimensions() {
+   // Get a list of all Google Analytics accounts for this user
+    gapi.client.analytics.management.profiles.list({
+      'accountId': '46090517',
+      'webPropertyId': 'UA-46090517-2',
+      'customDimensionId' : 'ga:dimension2'  
+  }).then(handleDimension)
+  .then(null, function(err) {
+      // Log any errors.
+      console.log(err);
+  });
+}
+function handleDimension(response) {
+  // Handles the response from the accounts list method.
+  if (response) {
+    console.log(response);
+  } else {
+    console.log('No accounts found for this user.');
+  }
+}
 
 function handleAccounts(response) {
   // Handles the response from the accounts list method.
