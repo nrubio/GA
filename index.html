@@ -156,6 +156,7 @@ function queryCoreReportingApi(profileId) {
     'end-date': 'today',
     'metrics': 'ga:sessions',
     'dimensions': 'ga:dimension14',
+    'filters' : 'ga:dimension2==true',
   })
   .then(function(response) {
     var formattedJson = JSON.stringify(response.result, null, 2);
